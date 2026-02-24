@@ -119,12 +119,23 @@ Etapas:
 
 - Node.js LTS (18 ou superior)
 - npm 9+
+Verifique as versões:
+node -v
+npm -v
 
 ## Instalação
 
-```bash
+git clone https://github.com/rfslusarz/projeto-cypress-hcxpert.git
+cd projeto-cypress-hcxpert
 npm ci
-```
+
+##Criando o projeto do zero (caso necessário)
+Se for iniciar o projeto manualmente:
+npm init -y
+npm install --save-dev cypress
+
+Para abrir o Cypress pela primeira vez:
+npx cypress open
 
 ## Execução Local
 
