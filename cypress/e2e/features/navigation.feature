@@ -31,7 +31,7 @@ Feature: Navegacao
     Then devo estar na pagina de produtos Madame
     And devo ver pelo menos um produto
 
-  Scenario: Validar link Video Tutorials
+  Scenario: Clicar em Video Tutorials e validar redirecionamento
     Given que acesso a pagina inicial
-    When verifico o link Video Tutorials
-    Then o link deve apontar para o canal do YouTube
+    When clico em Video Tutorials
+    Then devo ser redirecionado para o canal do YouTube

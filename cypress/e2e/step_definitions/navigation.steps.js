@@ -27,11 +27,8 @@ When("clico no link da marca Madame", () => {
 });
 
 When("clico em Video Tutorials", () => {
-  HomePage.clickVideoTutorials();
-});
-
-When("verifico o link Video Tutorials", () => {
-  HomePage.getVideoTutorialsLink().should("exist");
+  cy.intercept("https://www.youtube.com/**", "<html><body>Mock YouTube</body></html>").as("youtube");
+  HomePage.clickVideoTutorialsInPlace();
 });
 
 Then("devo estar na pagina de produtos", () => {
@@ -55,12 +52,6 @@ Then("devo ver pelo menos um produto", () => {
 });
 
 Then("devo ser redirecionado para o canal do YouTube", () => {
-  cy.url().should("include", "youtube.com");
-});
-
-Then("o link deve apontar para o canal do YouTube", () => {
-  cy.intercept("https://www.youtube.com/**", "<html><body>Mock YouTube</body></html>");
-  HomePage.clickVideoTutorialsInPlace();
   cy.origin("https://www.youtube.com", () => {
     cy.url().should("include", "youtube.com/c/AutomationExercise");
   });
