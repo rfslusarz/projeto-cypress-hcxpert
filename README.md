@@ -129,8 +129,10 @@ git clone https://github.com/rfslusarz/projeto-cypress-hcxpert.git
 cd projeto-cypress-hcxpert
 npm ci
 
-##Criando o projeto do zero (caso necessário)
+## Criando o projeto do zero (caso necessário)
+
 Se for iniciar o projeto manualmente:
+
 npm init -y
 npm install --save-dev cypress
 
