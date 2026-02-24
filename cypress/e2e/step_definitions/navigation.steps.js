@@ -59,6 +59,7 @@ Then("devo ser redirecionado para o canal do YouTube", () => {
 });
 
 Then("o link deve apontar para o canal do YouTube", () => {
+  cy.intercept("https://www.youtube.com/**", "<html><body>Mock YouTube</body></html>");
   HomePage.clickVideoTutorialsInPlace();
   cy.origin("https://www.youtube.com", () => {
     cy.url().should("include", "youtube.com/c/AutomationExercise");
