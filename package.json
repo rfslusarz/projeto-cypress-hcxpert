@@ -1,0 +1,36 @@
+{
+  "name": "projeto-cypress-hcxpert",
+  "version": "1.0.0",
+  "description": "Framework de automação de testes para automationexercise.com",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:smoke": "cypress run --env tags='@smoke'",
+    "test:login": "cypress run --env tags='@login'",
+    "test:navigation": "cypress run --env tags='@navigation'",
+    "test:contact": "cypress run --env tags='@contact'",
+    "test:e2e": "cypress run --env tags='@e2e'",
+    "test:api": "cypress run --env tags='@api'",
+    "test:ci": "cypress run --env tags='@e2e or @api'",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report"
+  },
+  "keywords": [
+    "cypress",
+    "cucumber",
+    "automation",
+    "e2e"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^21.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.4",
+    "@shelex/cypress-allure-plugin": "^2.40.2",
+    "allure-commandline": "^2.32.0",
+    "cypress": "^13.15.0",
+    "esbuild": "^0.24.0"
+  }
+}
