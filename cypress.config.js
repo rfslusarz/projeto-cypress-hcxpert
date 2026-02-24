@@ -25,6 +25,7 @@ module.exports = defineConfig({
     baseUrl: 'https://www.automationexercise.com',
     specPattern: 'cypress/e2e/**/*.feature',
     supportFile: 'cypress/support/e2e.js',
+    experimentalModifyObstructiveThirdPartyCode: true,
     setupNodeEvents(on, config) {
       addCucumberPreprocessorPlugin(on, config);
       on(

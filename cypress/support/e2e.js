@@ -1,13 +1,13 @@
 require('./commands');
 require('@shelex/cypress-allure-plugin');
 
-const HomePage = require('./pages/HomePage').default;
-const LoginPage = require('./pages/LoginPage').default;
-const ProductsPage = require('./pages/ProductsPage').default;
-const ProductDetailsPage = require('./pages/ProductDetailsPage').default;
-const CartPage = require('./pages/CartPage').default;
-const CheckoutPage = require('./pages/CheckoutPage').default;
-const ContactUsPage = require('./pages/ContactUsPage').default;
+const HomePage = require('./pages/HomePage');
+const LoginPage = require('./pages/LoginPage');
+const ProductsPage = require('./pages/ProductsPage');
+const ProductDetailsPage = require('./pages/ProductDetailsPage');
+const CartPage = require('./pages/CartPage');
+const CheckoutPage = require('./pages/CheckoutPage');
+const ContactUsPage = require('./pages/ContactUsPage');
 
 Cypress.PageObjects = {
   HomePage,

@@ -1,6 +1,11 @@
 const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor');
-
 const TrelloActionsClient = require('../../../support/api/TrelloActionsClient');
+
+function resolveNestedProperty(obj, path) {
+  return path.split('.').reduce((acc, key) => {
+    return acc !== null && acc !== undefined ? acc[key] : undefined;
+  }, obj);
+}
 
 Given('que eu consulto a Trello Actions API para um action fixo', () => {
   TrelloActionsClient.getAction().then((response) => {
@@ -25,10 +30,10 @@ Then('o status code deve ser 200', () => {
 
 Then('eu devo exibir o valor de {string}', (path) => {
   cy.get('@trelloResponse').then((response) => {
-    expect(response.body).to.have.nested.property(path);
-    const value = response.body.data.list.name;
+    const value = resolveNestedProperty(response.body, path);
+    expect(value, `Expected "${path}" to exist in response`).to.not.be.undefined;
     expect(value).to.be.a('string').and.not.be.empty;
-    cy.log(`data.list.name = ${value}`);
-    cy.allure().attachment('data.list.name', value, 'text/plain');
+    cy.log(`${path} = ${value}`);
+    cy.allure().attachment(path, value, 'text/plain');
   });
 });
