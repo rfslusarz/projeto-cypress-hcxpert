@@ -72,7 +72,7 @@ Framework de automação de testes E2E para o site https://www.automationexercis
 - Email com formato inválido
 - Mensagens de erro
 
-![Demonstração - Login](docs/gifs/login.feature.gif)
+<img src="docs/gifs/login.feature.gif" width="490" alt="Demonstração - Login" />
 
 ### Navegação
 
@@ -81,7 +81,7 @@ Framework de automação de testes E2E para o site https://www.automationexercis
 - Marca Madame
 - Link Video Tutorials
 
-![Demonstração - Navegação](docs/gifs/navigation.feature.gif)
+<img src="docs/gifs/navigation.feature.gif" width="490" alt="Demonstração - Navegação" />
 
 ### Contact Us
 
@@ -93,7 +93,7 @@ Framework de automação de testes E2E para o site https://www.automationexercis
 
 - Fluxo completo: produto, carrinho, login, checkout, pagamento
 
-![Demonstração - Compra E2E](docs/gifs/purchase_e2e.feature.gif)
+<img src="docs/gifs/purchase_e2e.feature.gif" width="490" alt="Demonstração - Compra E2E" />
 
 ### API Trello
 
