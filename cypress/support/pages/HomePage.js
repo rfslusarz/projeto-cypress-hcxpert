@@ -1,6 +1,6 @@
 class HomePage {
   visit() {
-    cy.visit('/');
+    cy.visit("/");
   }
 
   clickProducts() {
@@ -25,7 +25,7 @@ class HomePage {
 
   clickVideoTutorialsInPlace() {
     cy.get('a[href*="youtube.com/c/AutomationExercise"]')
-      .invoke('removeAttr', 'target')
+      .invoke("removeAttr", "target")
       .click();
   }
 
@@ -38,21 +38,24 @@ class HomePage {
   }
 
   clickCategoryLink(categoryName) {
-    cy.get('#Women').within(() => {
-      cy.contains('a', categoryName.trim()).click();
+    cy.get("#Women").within(() => {
+      cy.contains("a", categoryName.trim()).click();
     });
   }
 
   clickBrandMadame() {
-    cy.contains('a', 'Madame').click();
+    cy.contains("a", "Madame").click();
   }
 
   getFirstProductAddToCart() {
-    return cy.get('.productinfo').first().contains('a', 'Add to cart');
+    return cy.get(".productinfo").first().contains("a", "Add to cart");
   }
 
   getRecommendedProductAddToCart(productName) {
-    return cy.get('.recommended_items').contains('.productinfo', productName).contains('a', 'Add to cart');
+    return cy
+      .get(".recommended_items")
+      .contains(".productinfo", productName)
+      .contains("a", "Add to cart");
   }
 }
 

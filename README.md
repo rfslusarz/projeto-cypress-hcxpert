@@ -119,9 +119,9 @@ Etapas:
 
 - Node.js LTS (18 ou superior)
 - npm 9+
-Verifique as versões:
-node -v
-npm -v
+  Verifique as versões:
+  node -v
+  npm -v
 
 ## Instalação
 

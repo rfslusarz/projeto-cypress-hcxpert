@@ -1,6 +1,6 @@
 class ContactUsPage {
   visit() {
-    cy.visit('/contact_us');
+    cy.visit("/contact_us");
   }
 
   fillName(name) {
@@ -28,7 +28,7 @@ class ContactUsPage {
   }
 
   getSuccessMessage() {
-    return cy.get('.status.alert.alert-success');
+    return cy.get(".status.alert.alert-success");
   }
 
   fillForm(name, email, subject, message) {

@@ -1,62 +1,66 @@
-const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor');
+const {
+  Given,
+  When,
+  Then,
+} = require("@badeball/cypress-cucumber-preprocessor");
 const HomePage = Cypress.PageObjects.HomePage;
 const ProductsPage = Cypress.PageObjects.ProductsPage;
 
-Given('que acesso a pagina de produtos', () => {
+Given("que acesso a pagina de produtos", () => {
   ProductsPage.visit();
 });
 
-When('clico em Products', () => {
+When("clico em Products", () => {
   HomePage.clickProducts();
 });
 
-When('clico na categoria Women', () => {
+When("clico na categoria Women", () => {
   ProductsPage.clickWomenCategory();
 });
 
-When('clico na subcategoria {string}', (categoryName) => {
+When("clico na subcategoria {string}", (categoryName) => {
   ProductsPage.clickCategoryLink(categoryName);
 });
 
-When('clico no link da marca Madame', () => {
+When("clico no link da marca Madame", () => {
   HomePage.clickBrandMadame();
 });
 
-When('clico em Video Tutorials', () => {
+When("clico em Video Tutorials", () => {
   HomePage.clickVideoTutorials();
 });
 
-When('verifico o link Video Tutorials', () => {
-  HomePage.getVideoTutorialsLink().should('exist');
+When("verifico o link Video Tutorials", () => {
+  HomePage.getVideoTutorialsLink().should("exist");
 });
 
-Then('devo estar na pagina de produtos', () => {
-  cy.url().should('include', '/products');
+Then("devo estar na pagina de produtos", () => {
+  cy.url().should("include", "/products");
 });
 
-Then('a URL deve conter {string}', (urlPart) => {
-  cy.url().should('include', urlPart);
+Then("a URL deve conter {string}", (urlPart) => {
+  cy.url().should("include", urlPart);
 });
 
-Then('devo ver produtos da categoria', () => {
-  cy.get('.productinfo').should('have.length.at.least', 1);
+Then("devo ver produtos da categoria", () => {
+  cy.get(".productinfo").should("have.length.at.least", 1);
 });
 
-Then('devo estar na pagina de produtos Madame', () => {
-  cy.url().should('include', 'Madame');
+Then("devo estar na pagina de produtos Madame", () => {
+  cy.url().should("include", "Madame");
 });
 
-Then('devo ver pelo menos um produto', () => {
-  cy.get('.productinfo').should('have.length.at.least', 1);
+Then("devo ver pelo menos um produto", () => {
+  cy.get(".productinfo").should("have.length.at.least", 1);
 });
 
-Then('devo ser redirecionado para o canal do YouTube', () => {
-  cy.url().should('include', 'youtube.com');
+Then("devo ser redirecionado para o canal do YouTube", () => {
+  cy.url().should("include", "youtube.com");
 });
 
-Then('o link deve apontar para o canal do YouTube', () => {
+Then("o link deve apontar para o canal do YouTube", () => {
   HomePage.clickVideoTutorialsInPlace();
-  cy.origin('https://www.youtube.com', () => {
-    cy.url().should('include', 'youtube.com/c/AutomationExercise');
+  cy.origin("https://www.youtube.com", () => {
+    cy.url().should("include", "youtube.com/c/AutomationExercise");
   });
 });

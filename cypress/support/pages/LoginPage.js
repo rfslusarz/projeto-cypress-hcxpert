@@ -1,6 +1,6 @@
 class LoginPage {
   visit() {
-    cy.visit('/login');
+    cy.visit("/login");
   }
 
   fillEmail(email) {
@@ -22,7 +22,7 @@ class LoginPage {
   }
 
   getErrorMessage() {
-    return cy.get('form[action="/login"]').find('p');
+    return cy.get('form[action="/login"]').find("p");
   }
 
   getLoginForm() {
@@ -30,7 +30,7 @@ class LoginPage {
   }
 
   isLoggedIn() {
-    return cy.get('a[href="/logout"]').should('exist');
+    return cy.get('a[href="/logout"]').should("exist");
   }
 }
 

@@ -1,6 +1,6 @@
 class CheckoutPage {
   getRegisterLoginLink() {
-    return cy.contains('a', 'Register / Login');
+    return cy.contains("a", "Register / Login");
   }
 
   clickRegisterLogin() {
@@ -12,7 +12,7 @@ class CheckoutPage {
   }
 
   clickPlaceOrder() {
-    cy.contains('a', 'Place Order').click();
+    cy.contains("a", "Place Order").click();
   }
 
   fillCardName(name) {
@@ -33,15 +33,15 @@ class CheckoutPage {
   }
 
   clickPayAndConfirm() {
-    cy.contains('button', 'Pay and Confirm Order').click();
+    cy.contains("button", "Pay and Confirm Order").click();
   }
 
   getSuccessMessage() {
-    return cy.get('#success_message');
+    return cy.get("#success_message");
   }
 
   getOrderPlacedMessage() {
-    return cy.contains('Congratulations! Your order has been confirmed!');
+    return cy.contains("Congratulations! Your order has been confirmed!");
   }
 }
 
