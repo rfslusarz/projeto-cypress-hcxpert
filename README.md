@@ -187,6 +187,10 @@ npm run allure:open
 
 A pasta `allure-results` é gerada durante a execução dos testes. O relatório é criado a partir desses resultados.
 
+### Exemplo de Resultado
+
+<img src="docs/allure-report.png" width="490" alt="Exemplo de Resultado Allure Report" />
+
 ## Testes de API
 
 O projeto inclui testes de API para o Trello Actions API. O teste valida o status code 200 e extrai o valor de `data.list.name`, registrando evidências no Allure (request, response body e valor extraído).
